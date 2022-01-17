@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             empty($data['email']) ||
             empty($data['password'])
            
-        ) {
+        ) {                 
             die('<script type="text/javascript">alert("Please fill all required fields!");location.replace("login.php")</script>');
             
         }
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $res2 = mysqli_num_rows($result_psw);
 
 
-        if ($res1 == 1 || $res1 == 1)
+        if ($res1 == 1 || $res2 == 1)
         {
             header("location: homePage.html");
                
