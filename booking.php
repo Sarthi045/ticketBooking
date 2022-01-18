@@ -1,26 +1,5 @@
 <?php
 include('header.html');
-require_once "db_booking.php";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    if (isset($_POST['btnconf'])) 
-    {
-        $seat = $_POST['pr'];
-        $seat_conf = "";
-        foreach ($seat as $chk1) {
-            $seat_conf .= $chk1 . ",";
-        }
-        $result_seat = mysqli_query($conn, "INSERT INTO seat_booking(seat) VALUES ('" . $seat_conf . "',)") or die('DATABASE ERROR...');
-
-        if ($result_seat == 1) {
-            echo '<script>alert("Inserted Successfully")</script>';
-        } else {
-            echo '<script>alert("Failed To Insert")</script>';
-        }
-        mysqli_close($conn);
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +30,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+<?php
 
+$servername ="localhost";
+$username="root";
+$password ="";
+$database="booking";
+
+$conn = mysqli_connect($servername,$username,$password,$database);
+if(!$conn){
+    die('Could not Connect MySql Server:');
+  }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $checkbox1 = $_POST['pr'] ;  
+    if ($_POST["Submit" ]=="Submit")  
+    {  
+    for ($i=0; $i<sizeof ($checkbox1);$i++) {  
+    $query="INSERT INTO seat_booking(seat) VALUES ('".$checkbox1[$i]. "')";  
+    
+    }  
+        
+    }  
+}
+?>
     <div class="content-booking">
         <div class="container  text-center">
             <div class="booking-header">
@@ -123,6 +125,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="checkbox" id="E8" name="pr[]" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="E9" name="pr[]" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="E10" name="pr[]" value="100" onclick="checkPrice()">
+                                       <br> 
+                            <input class="m-3" type="submit" name="Submit" value="Submit">
 
                         </div>
                     </div>
@@ -137,8 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </b> </p>
 
                 </div>
-                <input type="submit" value="Confirm Booking" name="btnconf" class="btn btn-dark">
-            </div>
+               
         </div>
 </body>
 

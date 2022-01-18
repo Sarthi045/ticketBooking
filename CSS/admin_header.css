@@ -1,13 +1,17 @@
 
-.navmenu {    
+.header-adminnavmenu {    
     font-weight: 500;
       
 }
 .navbar{
-    color: #4b4350;
+    background-color: #13d0e9;
 }
 .heading{
     color: #4b4350;
     font-size: 15px;
     font-size: x-small;
+}
+
+.tens{
+    color: blue;
 }

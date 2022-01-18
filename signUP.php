@@ -7,6 +7,7 @@ session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['btnsub'])) {
         $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
         $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
@@ -15,6 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         if (
             empty($data['name']) ||
             empty($data['email']) ||
+            empty($data['mobile']) ||
             empty($data['password']) ||
             empty($data['cpassword'])
         ) {
@@ -26,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $result_email = mysqli_query($conn, "select * from signup_booking where email = '" . $email . "' ") or die('DATABASE ERROR...');
         $res = mysqli_num_rows($result_email);
         if ($res == 0) {
-            if (mysqli_query($conn, "INSERT INTO signup_booking(name,email,password,cpassword) VALUES('" . $name . "', '" . $email . "', '" . $password . "', '" . $cpassword . "')")) {
+            if (mysqli_query($conn, "INSERT INTO signup_booking(name,mobile,email,password,cpassword) VALUES('" . $name . "', '" . $mobile . "', '" . $email . "', '" . $password . "', '" . $cpassword . "')")) {
                 header("location: login.php");
                 exit();
             } else {
@@ -75,6 +77,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="mb-3">
                                 <label for="name" class="form-label my-2">Full Name : </label>
                                 <input type="text" class="form-control" name="name" placeholder="Your Name">
+
+                                <label for="mobile" class="form-label my-2">Mobile Number : </label>
+                                <input type="text" class="form-control" name="mobile" placeholder="Your number">
 
                                 <label for="email" class="form-label my-2">Email : </label>
                                 <input type="email" class="form-control" name="email" placeholder="Your Email">
