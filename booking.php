@@ -14,32 +14,47 @@ include('header.html');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="CSS/booking.css">
     <title>Booking</title>
+    <script>
+        function checkPrice() {
+            var input = document.getElementsByName("pr");
+            var total = 0;
+            for (var i = 0; i < input.length; i++) {
+                if (input[i].checked) {
+
+                    total += parseFloat(input[i].value);
+                }
+            }
+            document.getElementsByName("total")[0].value = "" + total.toFixed(2);
+        }
+    </script>
 </head>
 
 <body>
 
     <div class="content-booking">
-        <div class="container">
-            <div class="booking-header text-center">
+        <div class="container  text-center">
+            <div class="booking-header">
                 <h1> Booking Page </h1>
             </div>
-            <div class="form-seat text-center">
+
+            <div class="form-seat">
                 <form>
                     <h2 class="text-success"> SCREEN 1 </h2>
-                    <div class="seat-a1 border my-3  chec">
-                        <label>A1</label><input type="checkbox" id="a1" name="pr" value="100" onclick="checkPrice()">
-                        <input type="checkbox" id="a2" name="pr" value="100" onclick="checkPrice()">
-                        <input type="checkbox" id="a3" name="pr" value="100" onclick="checkPrice()">
-                        <input type="checkbox" id="a4" name="pr" value="100" onclick="checkPrice()">
-                        <input type="checkbox" id="a5" name="pr" value="100" onclick="checkPrice()">
-                        <input type="checkbox" id="a6" name="pr" value="100" onclick="checkPrice()">
-                        <input type="checkbox" id="a7" name="pr" value="100" onclick="checkPrice()">
-                        <input type="checkbox" id="a8" name="pr" value="100" onclick="checkPrice()">
-                        <input type="checkbox" id="a9" name="pr" value="100" onclick="checkPrice()">
-                        <input type="checkbox" id="a10" name="pr" value="100" onclick="checkPrice()">
-
-                        <div class="seat-b2 ">
-                            <label>B2</label><input type="checkbox" id="b1" name="pr" value="100" onclick="checkPrice()">
+                    <div class="screen-a p-3 border  my-3">
+                        <div class="seat-a">
+                            <label>A</label><input type="checkbox" id="a1" name="pr" value="100" onclick="checkPrice()">
+                            <input type="checkbox" id="a2" name="pr" value="100" onclick="checkPrice()">
+                            <input type="checkbox" id="a3" name="pr" value="100" onclick="checkPrice()">
+                            <input type="checkbox" id="a4" name="pr" value="100" onclick="checkPrice()">
+                            <input type="checkbox" id="a5" name="pr" value="100" onclick="checkPrice()">
+                            <input type="checkbox" id="a6" name="pr" value="100" onclick="checkPrice()">
+                            <input type="checkbox" id="a7" name="pr" value="100" onclick="checkPrice()">
+                            <input type="checkbox" id="a8" name="pr" value="100" onclick="checkPrice()">
+                            <input type="checkbox" id="a9" name="pr" value="100" onclick="checkPrice()">
+                            <input type="checkbox" id="a10" name="pr" value="100" onclick="checkPrice()">
+                        </div>
+                        <div class="seat-b ">
+                            <label>B</label><input type="checkbox" id="b1" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="b2" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="b3" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="b4" name="pr" value="100" onclick="checkPrice()">
@@ -50,10 +65,9 @@ include('header.html');
                             <input type="checkbox" id="b9" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="b10" name="pr" value="100" onclick="checkPrice()">
 
-
                         </div>
-                        <div class="seat-c3 ">
-                            <label>C3</label><input type="checkbox" id="c1" name="pr" value="100" onclick="checkPrice()">
+                        <div class="seat-c ">
+                            <label>C</label><input type="checkbox" id="c1" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="c2" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="c3" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="c4" name="pr" value="100" onclick="checkPrice()">
@@ -64,8 +78,8 @@ include('header.html');
                             <input type="checkbox" id="c9" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="c10" name="pr" value="100" onclick="checkPrice()">
                         </div>
-                        <div class="seat-d4 ">
-                            <label>C4</label><input type="checkbox" id="d1" name="pr" value="100" onclick="checkPrice()">
+                        <div class="seat-d">
+                            <label>D</label><input type="checkbox" id="d1" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="d2" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="d3" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="d4" name="pr" value="100" onclick="checkPrice()">
@@ -77,8 +91,8 @@ include('header.html');
                             <input type="checkbox" id="d10" name="pr" value="100" onclick="checkPrice()">
 
                         </div>
-                        <div class="seat-e5">
-                            <label>E5</label><input type="checkbox" id="E1" name="pr" value="100" onclick="checkPrice()">
+                        <div class="seat-e">
+                            <label>E</label><input type="checkbox" id="E1" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="E2" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="E3" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="E4" name="pr" value="100" onclick="checkPrice()">
@@ -93,8 +107,18 @@ include('header.html');
                     </div>
                 </form>
             </div>
+            <div class="price">
+                <div class="pricing ">
+                    <h2 class="text-danger"> Ticket Price </h2>
+                    <p><b> Ticket Price for 1 Seat : 100 ₹  </b> </p>
+
+                    <p id="add" class="pri"> <b>Total seat price : <input value="0.00" readonly="readonly" type="text" name="total" />
+                        </b> </p>
+                        
+                </div>
+                <input type="submit" value="Confirm Booking" name="btnconf" class="btn btn-dark">
+            </div>
         </div>
-    </div>
 </body>
 
 </html>

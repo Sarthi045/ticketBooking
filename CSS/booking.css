@@ -1,16 +1,21 @@
-input[type="checkbox"]{
+.form-seat input[type="checkbox"]{
     width: 20px;
     height: 20px;
     cursor: pointer;
     appearance: none;
-    background: #80aedb;
+    background: seagreen;
     border-radius: 1px;
     box-sizing: border-box;
 }
-input[type="checkbox"]:checked{
+.form-seat input[type="checkbox"]:checked{
    background-color: brown;
 }
-.form-seat label{
-    font-size: 15px;
-    margin-right: 5px;;
+.screen-a label{
+    font-size: 18px;
+    margin-right: 8px;
+    
+}
+.price{ 
+    align-items: center;    
+ 
 }
