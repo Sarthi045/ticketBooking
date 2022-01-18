@@ -26,9 +26,8 @@ include('header.html');
             <div class="form-seat text-center">
                 <form>
                     <h2 class="text-success"> SCREEN 1 </h2>
-
                     <div class="seat-a1 border my-3  chec">
-                        A1 <input type="checkbox" id="a1" name="pr" value="100" onclick="checkPrice()">
+                        <label>A1</label><input type="checkbox" id="a1" name="pr" value="100" onclick="checkPrice()">
                         <input type="checkbox" id="a2" name="pr" value="100" onclick="checkPrice()">
                         <input type="checkbox" id="a3" name="pr" value="100" onclick="checkPrice()">
                         <input type="checkbox" id="a4" name="pr" value="100" onclick="checkPrice()">
@@ -36,10 +35,11 @@ include('header.html');
                         <input type="checkbox" id="a6" name="pr" value="100" onclick="checkPrice()">
                         <input type="checkbox" id="a7" name="pr" value="100" onclick="checkPrice()">
                         <input type="checkbox" id="a8" name="pr" value="100" onclick="checkPrice()">
-                        
+                        <input type="checkbox" id="a9" name="pr" value="100" onclick="checkPrice()">
+                        <input type="checkbox" id="a10" name="pr" value="100" onclick="checkPrice()">
 
                         <div class="seat-b2 ">
-                            B2 <input type="checkbox" id="b1" name="pr" value="100" onclick="checkPrice()">
+                            <label>B2</label><input type="checkbox" id="b1" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="b2" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="b3" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="b4" name="pr" value="100" onclick="checkPrice()">
@@ -48,10 +48,12 @@ include('header.html');
                             <input type="checkbox" id="b7" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="b8" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="b9" name="pr" value="100" onclick="checkPrice()">
-                            
+                            <input type="checkbox" id="b10" name="pr" value="100" onclick="checkPrice()">
+
+
                         </div>
                         <div class="seat-c3 ">
-                            C3 <input type="checkbox" id="c1" name="pr" value="100" onclick="checkPrice()">
+                            <label>C3</label><input type="checkbox" id="c1" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="c2" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="c3" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="c4" name="pr" value="100" onclick="checkPrice()">
@@ -63,7 +65,7 @@ include('header.html');
                             <input type="checkbox" id="c10" name="pr" value="100" onclick="checkPrice()">
                         </div>
                         <div class="seat-d4 ">
-                            D4 <input type="checkbox" id="d1" name="pr" value="100" onclick="checkPrice()">
+                            <label>C4</label><input type="checkbox" id="d1" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="d2" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="d3" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="d4" name="pr" value="100" onclick="checkPrice()">
@@ -73,11 +75,10 @@ include('header.html');
                             <input type="checkbox" id="d8" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="d9" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="d10" name="pr" value="100" onclick="checkPrice()">
-                            <input type="checkbox" id="d11" name="pr" value="100" onclick="checkPrice()">
-                            <input type="checkbox" id="d12" name="pr" value="100" onclick="checkPrice()">
+
                         </div>
-                        <div class="seat-e5 ">
-                            E5 <input type="checkbox" id="E1" name="pr" value="100" onclick="checkPrice()">
+                        <div class="seat-e5">
+                            <label>E5</label><input type="checkbox" id="E1" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="E2" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="E3" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="E4" name="pr" value="100" onclick="checkPrice()">
@@ -86,11 +87,8 @@ include('header.html');
                             <input type="checkbox" id="E7" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="E8" name="pr" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="E9" name="pr" value="100" onclick="checkPrice()">
-                            <input type="checkbox" id="E11" name="pr" value="100" onclick="checkPrice()">
-                            <input type="checkbox" id="E12" name="pr" value="100" onclick="checkPrice()">
-                            <input type="checkbox" id="E13" name="pr" value="100" onclick="checkPrice()">
-                            <input type="checkbox" id="E14" name="pr" value="100" onclick="checkPrice()">
-                            <input type="checkbox" id="E15" name="pr" value="100" onclick="checkPrice()">
+                            <input type="checkbox" id="E10" name="pr" value="100" onclick="checkPrice()">
+
                         </div>
                     </div>
                 </form>
