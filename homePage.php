@@ -1,3 +1,7 @@
+<?php
+include('header.html');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,27 +17,7 @@
 </head>
 
 <body>
-
-    <div class="header">
-        <div class="navmenu container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <ul class="navbar-nav">
-                    <li class="nav-item mx-5">
-                        <a class="nav-link tens" href="homePage.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tens" href="#">Booking</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tens" href="signUP.php">Sign UP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tens" href="login.php">Login</a>
-                       </li>
-                </ul>   
-            </nav>  
-        </div>  
-     </div>
+    
 
     <div class="content">
         <div class="container">
