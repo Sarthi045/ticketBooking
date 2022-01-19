@@ -1,9 +1,9 @@
+
+
+
 <?php
 include('header.html');
 require_once "db_booking.php";
-session_start();
-
-
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['btnsub'])) {
         $name = mysqli_real_escape_string($conn, $_POST['name']);

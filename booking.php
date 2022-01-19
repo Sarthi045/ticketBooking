@@ -1,7 +1,7 @@
 <?php
-include('header.html');
+session_start();
+if(isset($_SESSION['email'])){
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +30,10 @@ include('header.html');
 </head>
 
 <body>
+
 <?php
+include('header.html');
+
 
 $servername ="localhost";
 $username="root";
@@ -146,3 +149,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
+<?php
+}else{
+    die('<script type="text/javascript">alert("First you need to Login or Sign up for booking ticket");location.replace("login.php")</script>');
+    // header("Location:login.php");
+}

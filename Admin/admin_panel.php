@@ -1,3 +1,10 @@
+<?php
+include('admin_header.php');
+session_start();
+if(isset($_SESSION['admin'])){
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,33 +15,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../CSS/admin_header.css">
     <title>admin</title>
 </head>
 
 <body>
-   
-    <div class="header-admin">
-        <div class="navmenu container-fluid">
-            <nav class="navbar navbar-expand-sm navbar-success ">
-                <ul class="navbar-nav">
-                    <li class="nav-item mx-5">
-                        <a class="nav-link tens" href="#">Admin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tens" href="../Admin/admin_coustomers.php">Customers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tens" href="#">Sign UP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tens" href="../Admin/admin_login.php">Login</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
     <h1> admin</h1>
 
 </body>
 
 </html>
+<?php
+}else{
+    die('<script type="text/javascript">alert("First you need to Login to access");location.replace("admin_login.php")</script>');
+    // header("Location:login.php");
+}

@@ -1,13 +1,20 @@
 
-.navmenu {    
-    font-weight: 500;
-      
+.main{
+    background-image: url(../IMG/home.jpg);   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:scroll;
+    background-position: center center;
+    padding: 100px;
 }
-.navbar{
-    color: #4b4350;
-}
-.heading{
-    color: #4b4350;
+
+.main a{
+    background-color: #e7e7e7;
+    border-radius: 20px;
     font-size: 15px;
-    font-size: x-small;
+    /* padding: 5px; */
+    color: #4b4350;
+    margin-bottom: 10px;
+    font-weight: bold;
+    
 }

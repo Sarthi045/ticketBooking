@@ -1,4 +1,10 @@
 <?php
+include('admin_header.php');
+session_start();
+if(isset($_SESSION['admin'])){
+?>
+
+<?php
 require_once "../db_booking.php";
 
 ?>
@@ -54,3 +60,9 @@ require_once "../db_booking.php";
 </body>
 
 </html>
+
+<?php
+}else{
+    die('<script type="text/javascript">alert("First you need to Login to access");location.replace("admin_login.php")</script>');
+    // header("Location:login.php");
+}

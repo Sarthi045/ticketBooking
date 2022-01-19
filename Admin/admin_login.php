@@ -1,5 +1,7 @@
 <?php
 
+
+include('admin_header.php');
 require_once "../db_booking.php";
 session_start();
 
@@ -24,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $res = mysqli_num_rows($result_admin);
         if ($res == 1)
         {
+            $_SESSION['admin']=$_POST['admin'];
             header("location: admin_panel.php");
                
         } else 

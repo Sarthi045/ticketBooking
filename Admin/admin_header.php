@@ -8,8 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>    
-    <link rel="stylesheet" href="./CSS/header.css">
-    <title> Home Page </title>
+    <link rel="stylesheet" href="../CSS/admin_header.css">
+    <title> Header </title>
 </head>
 
 <body>
@@ -19,19 +19,14 @@
             <nav class="navbar navbar-expand-sm navbar-dark">
                 <ul class="navbar-nav">
                     <li class="nav-item mx-5">
-                        <a class="nav-link tens" href="homePage.php">Home</a>
+                        <a class="nav-link tens" href="../Admin/admin_panel.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tens" href="booking.php">Booking</a>
+                        <a class="nav-link tens" href="../Admin/admin_coustomers.php">Coustomers Details</a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link tens" href="signUP.php">Sign UP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tens" href="login.php">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tens" href="logout.php">logout</a>
+                        <a class="nav-link tens" href="../Admin/admin_logout.php">Logout</a>
                     </li>
                 </ul>
             </nav>

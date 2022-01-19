@@ -27,8 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         if ($res1 == 1 || $res2 == 1)
-        {
-            header("location: homePage.html");
+        {   
+            $_SESSION['email']=$_POST['email'];
+            header("location: homePage.php");
                
         } else  {
 
@@ -48,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="./CSS/login.css">
     <title>Login</title>
 </head>
 <body>
@@ -75,6 +76,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </form>
                     </div>
                 </div>
+                <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6">
+                <div class="signup my-3 ">
+                    <h3 class="text-dark">New Customers</h3>
+                    <p> Creating an account has many benefits: check out faster, keep more than one address, track orders and more</p>
+                    <form class="input-group">
+                        <div class="form">
+                            <a class="btn btn-success my-2" href="signup.php">CREATE AN ACCOUNT</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
             </div>
         </div>
     </div>
