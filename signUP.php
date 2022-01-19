@@ -1,8 +1,8 @@
-
-
-
 <?php
-include('header.html');
+if(!isset($_SESSION)){
+    session_start();
+}
+include('header.php');
 require_once "db_booking.php";
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['btnsub'])) {
@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $result_email = mysqli_query($conn, "select * from signup_booking where email = '" . $email . "' ") or die('DATABASE ERROR...');
         $res = mysqli_num_rows($result_email);
         if ($res == 0) {
-            if (mysqli_query($conn, "INSERT INTO signup_booking(name,mobile,email,password,cpassword) VALUES('" . $name . "', '" . $mobile . "', '" . $email . "', '" . $password . "', '" . $cpassword . "')")) {
+            if (mysqli_query($conn, "INSERT INTO signup_booking(name,mobile,email,password,cpassword) VALUES('" . $name . "', '" . $mobile . "', '" . $email . "', '" . md5($password) . "', '" . md5($cpassword) . "')")) {
                 header("location: login.php");
                 exit();
             } else {
@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="CSS/signup.css">
+    <link rel="stylesheet" href="./CSS/signup.css">
     <title>Signup</title>
 </head>
 

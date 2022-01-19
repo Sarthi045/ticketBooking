@@ -43,7 +43,7 @@ if (isset($_SESSION['admin'])) {
 
     <body>
         <a href="admin_panel.php">Home</a>
-        <br /><br />
+        <br/><br/>
 
         <form name="update_user" method="post" action="update_costomer.php">
             <table border="0">
@@ -71,5 +71,5 @@ if (isset($_SESSION['admin'])) {
 <?php
 } else {
     die('<script type="text/javascript">alert("First you need to Login to access");location.replace("admin_login.php")</script>');
-    // header("Location:login.php");
+    
 }

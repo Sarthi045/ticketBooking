@@ -1,9 +1,14 @@
 <?php
-
+if(!isset($_SESSION)){
+    session_start();
+}
 
 include('admin_header.php');
 require_once "../db_booking.php";
-session_start();
+
+
+    
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['btnsub'])) {
@@ -46,10 +51,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="../CSS/login.css">
     <title>admin</title>
 </head>
-<body>
+<body id="12">
 <div class="container">
         <div class="signup">
             <div class="row">

@@ -1,7 +1,9 @@
 <?php
-include('header.html');
+include('header.php');
 require_once "db_booking.php";
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['btnsub'])) {
@@ -79,10 +81,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6">
                 <div class="signup my-3 ">
                     <h3 class="text-dark">New Customers</h3>
-                    <p> Creating an account has many benefits: check out faster, keep more than one address, track orders and more</p>
+                    <p> Creating an account has many benefits: check out faster and easy booking</p>
                     <form class="input-group">
                         <div class="form">
-                            <a class="btn btn-success my-2" href="signup.php">CREATE AN ACCOUNT</a>
+                            <a class="btn btn-dark my-3" href="signup.php">CREATE AN ACCOUNT</a>
                         </div>
                     </form>
                 </div>

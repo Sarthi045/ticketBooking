@@ -1,5 +1,8 @@
 <?php
-include('header.html');
+if(!isset($_SESSION)){
+    session_start();
+}
+include('header.php');
 ?>
 
 <!DOCTYPE html>
