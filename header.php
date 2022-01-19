@@ -27,6 +27,9 @@ if (!isset($_SESSION)) {
                         <a class="nav-link tens" href="./homePage.php">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link tens" href="./movies.php">Movies</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link tens" href="./booking.php">Booking</a>
                     </li>
 
@@ -34,9 +37,9 @@ if (!isset($_SESSION)) {
                     if (isset($_SESSION['email'])) {
                                                                                                                                                                                                                                     
                         echo '<li class="nav-item dropdown d-flex">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Hello, ' . $_SESSION["email"] . '</a>
-                        <div class="sub-menu dropdown-menu">                        
-                        <a class="dropdown-item" href="./logout.php"">logout</a></div></li>';
+                        <a class="nav-link">Hello, ' . $_SESSION["email"] . '</a>
+                                               
+                        <a class="nav-link" href="./logout.php"">logout</a> </li>';
                     } else {
                         echo ' <li class="nav-item">
                         <a class="nav-link tens" href="./login.php">Login</a>

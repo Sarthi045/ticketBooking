@@ -30,9 +30,9 @@ include('header.php');
                     <div class="row">
                         <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6 mt-5 py-3  text-white ">
                             <p>BOOK with us</p>
-                            <div class="col-sm-12 col-lg-5 col-md-5 col-xl-5 text-white ">
-                                <a class="nav-link" href="booking.php">Book your movie seat</a>
-                                <a class="nav-link" href="signUP.php">New User ? Create Account</a>
+                            <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6 text-white ">
+                                <a class="nav-link" href="./movies.php">Watch your favourite movie</a>
+                                <a class="nav-link" href="./signUP.php">New User ? Create Account</a>
                             </div>
                         </div>
                     </div>

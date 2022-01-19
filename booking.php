@@ -48,7 +48,7 @@ if(!$conn){
   }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    $checkbox1 = $_POST['pr'] ;  
+    $checkbox1 = $_POST['pr[]'] ;  
     if ($_POST["Submit" ]=="Submit")  
     {  
     for ($i=0; $i<sizeof ($checkbox1);$i++) {  
@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="checkbox" id="E9" name="pr[]" value="100" onclick="checkPrice()">
                             <input type="checkbox" id="E10" name="pr[]" value="100" onclick="checkPrice()">
                                        <br> 
-                            <input class="m-3" type="submit" name="Submit" value="Submit">
+                            <input class="m-3 btn text-center btn-dark"type="submit" name="Submit" value="BOOK">
 
                         </div>
                     </div>
@@ -156,3 +156,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     die('<script type="text/javascript">alert("First you need to Login or Sign up for booking ticket");location.replace("login.php")</script>');
     // header("Location:login.php");
 }
+?>

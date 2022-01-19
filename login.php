@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($res1 == 1 || $res2 == 1)
         {   
             $_SESSION['email']=$_POST['email'];
-            header("location: homePage.php");
+            header("location: movies.php");
                
         } else  {
 
