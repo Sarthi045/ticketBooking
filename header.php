@@ -21,21 +21,19 @@ if (!isset($_SESSION)) {
 
     <div class="header">
         <div class="navmenu container-fluid">
-            <nav class="navbar navbar-expand-sm navbar-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="./homePage.php">
+                <img src="./IMG/pngtree-m-letter-logo-abstract-vector-image_321123.jpg" width="30" height="30" class="d-inline-block align-top" alt="">  
+                MCRe Show </a>
+                
                 <ul class="navbar-nav">
-                    <li class="nav-item mx-5">
-                        <a class="nav-link tens" href="./homePage.php">Home</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link tens" href="./movies.php">Movies</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tens" href="./booking.php">Booking</a>
                     </li>
 
                     <?php
                     if (isset($_SESSION['email'])) {
-                                                                                                                                                                                                                                    
+
                         echo '<li class="nav-item dropdown d-flex">
                         <a class="nav-link">Hello, ' . $_SESSION["email"] . '</a>
                                                

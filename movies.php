@@ -39,7 +39,7 @@ include('header.php');
                         <div class="card-body">
                             <h5 class="card-title">Pushpa: The Rise - Part 01</h5>
                             <p class="card-text">Based on the smuggling of red sander trees in Seshachalam forest, Andhra Pradesh, Pushpa tells the story of a lorry driver who is part of the illegal business.</p>
-                            <a href="./booking.php" class="btn text-center btn-dark">Book tickets</a>
+                            <a href="./selectmovie.php" class="btn text-center btn-dark">Book tickets</a>
                         </div>
                     </div>
                 </div>

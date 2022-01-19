@@ -73,11 +73,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="input-group">
                     <div class="mb-3">
-                        <label for="name" class="form-label my-2">Full Name : </label>
-                        <input type="text" class="form-control" name="name" placeholder="Your Name">
+                        <label for="seat_no" class="form-label my-2">Total Seat : </label>
+                        <input type="number" min="1" max="25" class="form-control" name="seat_no" placeholder="total seat">
 
                         <label for="date" class="form-label my-2">Select Date : </label>
-                        <input type="date" class="form-control" name="date">
+                        <input type="week" class="form-control" name="date">
 
                         <label for="time" class="form-label my-2">Select time : </label>
                         <input type="time" class="form-control time" name="date">
