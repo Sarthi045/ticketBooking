@@ -1,7 +1,9 @@
 <?php
 
-
 include('header.php');
+
+require_once "db_booking.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -20,44 +22,35 @@ include('header.php');
 
 <body>
 
-    <div class="container">
-        <div class="movies">
-            <div class="row d-flex">
-                <div class="col-sm-12 col-lg-4 col-md-4 col-xl-4">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="./IMG/spiderman.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Spider-Man: No Way Home</h5>
-                            <p class="card-text">Spider-Man, marvel character our friendly neighborhood hero is unmasked and no longer able to separate his normal life from the high-stakes of being a Super Hero.</p>
-                            <a href="./booking.php" class="btn text-center btn-dark">Book tickets</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-lg-4 col-md-4 col-xl-4">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="./IMG/pushpa.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Pushpa: The Rise - Part 01</h5>
-                            <p class="card-text">Based on the smuggling of red sander trees in Seshachalam forest, Andhra Pradesh, Pushpa tells the story of a lorry driver who is part of the illegal business.</p>
-                            <a href="./selectmovie.php" class="btn text-center btn-dark">Book tickets</a>
-                        </div>
-                    </div>
-                </div>
-            
-            <div class="col-sm-12 col-lg-4 col-md-4 col-xl-4">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="./IMG/the-king-s-man.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">The King`s Man</h5>
-                        <p class="card-text">As some of history`s worst criminals and tyrants conspire to start a war that will leave humanity in peril, one man braves the odds and races against time to stop them all.</p>
-                        <a href="./booking.php" class="btn text-center btn-dark">Book tickets</a>
+<div class="movies">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="d-flex justify-content-center col-sm-12 p-3">
+
+                        <?php
+                        $result_table = mysqli_query($conn, "select * from movielist");
+                        while ($data = mysqli_fetch_array($result_table)) {
+                        ?>
+                            <div class="card mx-3" style="width: 18rem;">
+                                <img class="card-img-top" src="./Admin/<?php echo $data['uplodeimg']; ?>" alt="img">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $data['movnm']; ?></h5>
+                                    <p class="card-text"><?php echo $data['moviedisc']; ?></p>
+                                    
+                                </div>
+                                <a href="./booking.php" class="btn text-center mx-4 btn-dark">Book tickets</a>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                        </table>
+                        <?php mysqli_close($conn); ?>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
+        </div>
 
 
 </body>

@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION)){
+if (!isset($_SESSION)) {
     session_start();
 }
 include('header.php');
@@ -24,7 +24,7 @@ include('header.php');
         <div class="container-fluid main">
             <div class="content p-5 ">
                 <div class="mainimg ">
-                    <div class="col-sm text-center text-white">
+                    <div class="col-sm text-center text-white p-4">
                         <h1> Easy Booking with </h1>
                         <h3> MCre Show </h3>
                     </div>
@@ -33,7 +33,15 @@ include('header.php');
                             <p>BOOK with us</p>
                             <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6 text-white ">
                                 <a class="nav-link" href="./movies.php">Watch your favourite movie</a>
-                                <a class="nav-link" href="./signUP.php">New User ? Create Account</a>
+                                <?php
+                                if (isset($_SESSION['email'])) 
+                                {
+                                   
+                                } else {
+                                    echo '<a class="nav-link" href="./signUP.php">New User ? Create Account</a>';
+                                }
+                                ?>
+                               
                             </div>
                         </div>
                     </div>
@@ -41,7 +49,7 @@ include('header.php');
             </div>
         </div>
         <div>
-    </div>
+        </div>
 
 
 </body>

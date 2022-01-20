@@ -29,7 +29,10 @@ if (isset($_SESSION['admin'])) {
                     <a class="nav-link tens" href="../Admin/admin_coustomers.php">Details</a>
                 </li>
                 <li class="nav-item mx-3">
-                    <a class="nav-link tens" href="../Admin/admin_movie_post.php">Movies</a>
+                    <a class="nav-link tens" href="../Admin/admin_movie_post.php">Post Movie</a>
+                </li>
+                <li class="nav-item mx-3">
+                    <a class="nav-link tens" href="../Admin/admin_movie_list_show.php">Movies</a>
                 </li>
                 <?php
                 if (isset($_SESSION['admin'])) {

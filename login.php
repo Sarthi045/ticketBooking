@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                
         } else  {
 
-            echo "Error: " . $sql . "" . mysqli_error($conn);
+            die('<script type="text/javascript">alert("Please enter correct email or password!");location.replace("login.php")</script>');
         }           
             
         mysqli_close($conn);

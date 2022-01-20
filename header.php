@@ -39,7 +39,7 @@ if (!isset($_SESSION)) {
                                                
                         <a class="nav-link" href="./logout.php"">logout</a> </li>';
                     } else {
-                        echo ' <li class="nav-item">
+                        echo '<li class="nav-item">
                         <a class="nav-link tens" href="./login.php">Login</a>
                     </li> <li class="nav-item">
                     <a class="nav-link tens" href="./signUP.php">Sign up</a>
