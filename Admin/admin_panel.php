@@ -1,6 +1,6 @@
 <?php
-include('admin_header.php');
-if(!isset($_SESSION)){
+include('sidebar_admin.php');
+if (!isset($_SESSION)) {
     session_start();
 }
 
@@ -19,11 +19,14 @@ if (isset($_SESSION['admin'])) {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="../CSS/admin_header.css">
+        <link rel="stylesheet" href="../CSS/admin_panel.css">
         <title>admin</title>
     </head>
 
     <body>
-        <h1> admin</h1>
+        <div class="content">
+            <h1> admin panel </h1>
+        </div>
 
     </body>
 
@@ -33,3 +36,4 @@ if (isset($_SESSION['admin'])) {
     die('<script type="text/javascript">alert("First you need to Login to access");location.replace("admin_login.php")</script>');
     // header("Location:login.php");
 }
+?>

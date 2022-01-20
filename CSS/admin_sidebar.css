@@ -1,0 +1,20 @@
+.sidebar{
+    height: 100%;
+    width: 150px;
+    position: fixed; 
+    background-color: brown;
+    overflow-x: hidden;
+    padding-top: 20px;  
+    top: 0;
+    left: 0; 
+}
+.sidebar a{
+    color: burlywood;
+    font-weight: bold;
+    font-size: 20px;
+    
+    margin-left: 10px;
+}
+.sidebar a:hover{
+    color: white;
+}
