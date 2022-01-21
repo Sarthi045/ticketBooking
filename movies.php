@@ -22,36 +22,34 @@ require_once "db_booking.php";
 
 <body>
 
-<div class="movies">
-            <div class="container">
-                
-                <div class="row">
-                    <div class="d-flex justify-content-center col-sm-12 p-3">
-
-                        <?php
-                        $result_table = mysqli_query($conn, "select * from movielist");
-                        while ($data = mysqli_fetch_array($result_table)) {
-                        ?>
-                            <div class="card mx-3" style="width: 18rem;">
-                                <img class="card-img-top" src="./Admin/<?php echo $data['uplodeimg']; ?>" alt="img">
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo $data['movnm']; ?></h5>
-                                    <p class="card-text"><?php echo $data['moviedisc']; ?></p>
-                                    
-                                </div>
-                                <a href="./booking.php" class="btn text-center mx-4 btn-dark">Book tickets</a>
+    <div class="movies">
+        <div class="container">
+            <div class="row">
+                <div class="d-flex justify-content-center col-sm-12 p-3">
+                    <?php
+                    $result_table = mysqli_query($conn, "select * from movielist");
+                    while ($data = mysqli_fetch_array($result_table)) {
+                    ?>
+                        <div class="card mx-4" style="width: 15rem;">
+                            <img class="card-img" src="./Admin/<?php echo $data['uplodeimg']; ?>" alt="img">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $data['movnm']; ?></h5>
+                                <p class="card-text"><?php echo $data['moviedisc']; ?></p>
                             </div>
-                        <?php
-                        }
-                        ?>
-                        </table>
-                        <?php mysqli_close($conn); ?>
-                    </div>
+                            <a href="./booking.php" class="btn text-center mx-4 btn-dark">Book tickets</a>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    </table>
+                    <?php mysqli_close($conn); ?>
                 </div>
             </div>
         </div>
-        </div>
+    </div>
+    </div>
 
 
 </body>
+
 </html>

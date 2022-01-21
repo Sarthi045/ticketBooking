@@ -6,10 +6,6 @@
     background-color: rgb(15, 61, 99);
 }
 
-.navbar{
-    justify-content: flex-end;
-}
-
 .navbar a{
     color: burlywood;
     font-weight: bold;
@@ -21,4 +17,8 @@
     color: white;
 }
 
+
+.navbar{
+    justify-content: flex-end;
+}
 

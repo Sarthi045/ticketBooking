@@ -22,16 +22,16 @@ include('header.php');
 <body>
     <div class="homecontent">
         <div class="container-fluid main">
-            <div class="content p-5 ">
+            <div class="content py-5 ">
                 <div class="mainimg ">
-                    <div class="col-sm text-center text-white p-4">
+                    <div class="col-sm text-center text-white ">
                         <h1> Easy Booking with </h1>
                         <h3> MCre Show </h3>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6 mt-4 py-3  text-white ">
+                    <div class="row ">
+                        <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6 mt-4 py-5  text-white ">
                             <p>BOOK with us</p>
-                            <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6 text-white ">
+                            <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6 text-white py-2 ">
                                 <a class="nav-link" href="./movies.php">Watch your favourite movie</a>
                                 <?php
                                 if (isset($_SESSION['email'])) 

@@ -21,7 +21,7 @@ if (!isset($_SESSION)) {
 
     <div class="header">
         <div class="navmenu container-fluid">
-            <nav class="navbar  navbar-dark">
+            <nav class="navbar">
                 <a class="navbar-brand" href="./homePage.php">
                     <img src="./IMG/pngtree-m-letter-logo-abstract-vector-image_321123.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
                     MCRe Show </a>

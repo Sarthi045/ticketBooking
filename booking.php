@@ -5,11 +5,8 @@ if (!isset($_SESSION)) {
 
     if (isset($_SESSION['email'])) {
         require_once "db_booking.php";
-
-
-
+        
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
             $checkBox = implode(',', $_POST['pr']);
             if (isset($_POST['btnbook'])) {
                 if (mysqli_query($conn, "INSERT INTO seat_booking(seat,coust_id) VALUES('" . $checkBox . "','" . $checkBox . "')")) {
