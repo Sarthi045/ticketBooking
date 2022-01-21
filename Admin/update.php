@@ -24,11 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = mysqli_query($conn, "UPDATE signup_booking SET name='$name',mobile='$mobile',email='$email' WHERE coust_id=$coust_id");
 
         die('<script type="text/javascript">alert("Update successufuly..");location.replace("admin_coustomers.php")</script>');
-        // } 
-        // else 
-        // {
-        //     die('<script type="text/javascript">alert("Not Update.. try again");location.replace("update_costomer.php")</script>');
-        // }
+        
 
 
         mysqli_close($conn);
