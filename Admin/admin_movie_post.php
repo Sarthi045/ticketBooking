@@ -2,6 +2,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
+include('admin_header.php');
 include('sidebar_admin.php');
 require_once "../db_booking.php";
 

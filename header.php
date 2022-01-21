@@ -21,29 +21,28 @@ if (!isset($_SESSION)) {
 
     <div class="header">
         <div class="navmenu container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-dark">
+            <nav class="navbar  navbar-dark">
                 <a class="navbar-brand" href="./homePage.php">
-                <img src="./IMG/pngtree-m-letter-logo-abstract-vector-image_321123.jpg" width="30" height="30" class="d-inline-block align-top" alt="">  
-                MCRe Show </a>
-                
+                    <img src="./IMG/pngtree-m-letter-logo-abstract-vector-image_321123.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    MCRe Show </a>
+
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link tens" href="./movies.php">Movies</a>
+                        <a class="nav-link tens " href="./movies.php">Movies</a>
                     </li>
+                </ul>
+                <ul class="navbar-nav">
 
                     <?php
                     if (isset($_SESSION['email'])) {
 
-                        echo '<li class="nav-item dropdown d-flex">
-                        <a class="nav-link">Hello, ' . $_SESSION["email"] . '</a>
-                                               
-                        <a class="nav-link" href="./logout.php"">logout</a> </li>';
+                        echo '<li class="nav-item d-flex ">
+                        <a class="nav-link mx-5">Hello, ' . $_SESSION["email"] .  '</a>
+                        <a class="nav-link" href="./logout.php""> logout</a> </li>';
                     } else {
-                        echo '<li class="nav-item">
-                        <a class="nav-link tens" href="./login.php">Login</a>
-                    </li> <li class="nav-item">
-                    <a class="nav-link tens" href="./signUP.php">Sign up</a>
-                </li>';
+                        echo '<li class="nav-item d-flex">
+                        <a class="nav-link mx-4" href="./login.php"> Login</a>                
+                    <a class="nav-link" href="./signUP.php"> Sign up</a></li>';
                     }
                     ?>
 

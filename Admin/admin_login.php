@@ -1,9 +1,13 @@
 <?php
-if(!isset($_SESSION)){
+include('admin_header.php');
+include('sidebar_admin.php');
+if (!isset($_SESSION)) {
     session_start();
 }
 
-include('admin_header.php');
+
+
+include('sidebar_admin.php');
 require_once "../db_booking.php";
 
 
@@ -32,11 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($res == 1)
         {
             $_SESSION['admin']=$_POST['admin'];
-            header("location: admin_panel.php");
+            die('<script type="text/javascript">alert("login Succesfully..");location.replace("admin_coustomers.php")</script>');
                
         } else 
             
-                echo "Error: " . $sql . "" . mysqli_error($conn);
+        die('<script type="text/javascript">alert("Please enter correct email or password!");location.replace("admin_login.php")</script>');
             
         mysqli_close($conn);
     }
@@ -51,12 +55,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="stylesheet" href="../CSS/admin_panel.css">
     <title>admin</title>
 </head>
 <body id="12">
 <div class="container">
-        <div class="signup">
+        <div class="login">
             <div class="row">
                 <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6">
                     <div class="heading">

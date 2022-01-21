@@ -29,7 +29,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $res = mysqli_num_rows($result_email);
         if ($res == 0) {
             if (mysqli_query($conn, "INSERT INTO signup_booking(name,mobile,email,password,cpassword) VALUES('" . $name . "', '" . $mobile . "', '" . $email . "', '" . md5($password) . "', '" . md5($cpassword) . "')")) {
-                header("location: login.php");
+                
+                die('<script type="text/javascript">alert("Account has been created, now logina and continue to booking..");location.replace("login.php")</script>');
                 exit();
             } else {
                 echo "Error: " . $sql . "" . mysqli_error($conn);

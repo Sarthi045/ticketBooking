@@ -1,17 +1,22 @@
 .navmenu {    
     font-weight: 500;
-    background-color: #4b4350;  
+    background-color: rgb(15, 61, 99); 
 }
 .navbar{
-    background-color: #4b4350;
+    background-color: rgb(15, 61, 99);
 }
-.heading{
-    color: #4b4350;
-    font-size: 15px;
-    font-size: x-small;
+
+.navbar{
+    justify-content: flex-end;
 }
-.heading{
-    color: #4b4350;
-    font-size: 15px;
-    font-size: x-small;
+
+.navbar a{
+    color: burlywood;
+    font-weight: bold;
+    font-size: 20px;
+    
+    margin-left: 10px;
+}
+.navbar a:hover{
+    color: white;
 }

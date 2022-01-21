@@ -21,22 +21,19 @@ if(!isset($_SESSION)){
 
     <div class="header">
         <div class="navmenu container-fluid">
-            <nav class="navbar navbar-expand-sm navbar-dark">
+            <nav class="navbar d-flex justify-content-end ">
                 <ul class="navbar-nav">
-                    <li class="nav-item mx-5">
-                        <a class="nav-link tens" href="../Admin/admin_panel.php">ADMIN</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tens" href="../Admin/admin_coustomers.php">Coustomers Details</a>
-                    </li>
+                    
 
                     <?php
                     if (isset($_SESSION['admin'])) {
 
-                        echo '<li class="nav-item">
+                        echo '<li class="nav-item d-flex">
+                        
                         <a class="nav-link tens" href="../Admin/admin_logout.php">Logout</a></li>';
                     } else {
-                        echo '<li class="nav-item">
+                        echo '<li class="nav-item d-flex">
+                        
                         <a class="nav-link tens" href="../Admin/admin_login.php">Log in</a></li>';
                     }
                     ?>

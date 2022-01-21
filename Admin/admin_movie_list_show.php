@@ -1,4 +1,5 @@
 <?php
+include('admin_header.php');
 include('sidebar_admin.php');
 
 if (!isset($_SESSION)) {
