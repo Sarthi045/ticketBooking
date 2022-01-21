@@ -60,14 +60,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="movie">
-            <div class="heading">
-                <h1> Movies</h1>
-                <h4> Every friday new movie</h4>
-                <a href="./admin_movie_list_show.php" class="btn text-center btn-dark">movie list</a>
+            <div class="head-text">
+                <h1> Add new +movies</h1>
+                <h4> Every friday new movie
+                <a href="./admin_movie_list_show.php" class="btn text-center mx-3 btn-dark">movie list</a></h4>
             </div>
-            <div class="form">
+            <div class="form form-control my-3 align-item-center">
                 <form enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="input-group">
                     <div class="mb-3">
 

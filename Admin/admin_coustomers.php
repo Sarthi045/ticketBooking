@@ -31,6 +31,7 @@ require_once "../db_booking.php";
         <div class="container">
             <div class="coustomer-header">
                 <h1> Customers Details </h1>
+               
             </div>
             <div class="table">
                 <table class="table table-success">

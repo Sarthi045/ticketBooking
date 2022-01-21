@@ -1,34 +1,24 @@
 <?php
 if (!isset($_SESSION)) {
     session_start();
-    $sessoin_seat = array();
-    if (array_key_exists("pr", $_SESSION)) {
-        if ($_SESSION["pr"] != null) {
-            $sessoin_seat = $_SESSION["pr"];
-        }
-    }
-}
-if (array_key_exists("pr", $_SESSION)) {
-    if ($_SESSION["pr"] != null) {
-        $sessoin_seat = $_SESSION["pr"];
-    }
-}
+    include('header.php');
 
-if (isset($_SESSION['email'])) {
-    require_once "db_booking.php";
+    if (isset($_SESSION['email'])) {
+        require_once "db_booking.php";
 
 
-    $_SESSION["pr"] = $_POST["pr"];
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $_SESSION["pr"] = $_POST["pr"];
-        $checkBox = implode(',', $_POST['pr']);
-        if (isset($_POST['btnbook'])) {
-            if (mysqli_query($conn, "INSERT INTO seat_booking(seat,coust_id) VALUES('" . $checkBox . "','" . $checkBox . "')")) {
 
-                die('<script type="text/javascript">alert("Booking done.");location.replace("movies.php")</script>');
-                exit();
-            } else {
-                die('<script type="text/javascript">alert("Unable to booking, please retry");location.replace("booking.php")</script>');
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            $checkBox = implode(',', $_POST['pr']);
+            if (isset($_POST['btnbook'])) {
+                if (mysqli_query($conn, "INSERT INTO seat_booking(seat,coust_id) VALUES('" . $checkBox . "','" . $checkBox . "')")) {
+
+                    die('<script type="text/javascript">alert("Booking done.");location.replace("movies.php")</script>');
+                    exit();
+                } else {
+                    die('<script type="text/javascript">alert("Unable to booking, please retry");location.replace("booking.php")</script>');
+                }
             }
         }
     }
@@ -63,31 +53,7 @@ if (isset($_SESSION['email'])) {
 
     <body>
 
-        <?php
-
-        include('header.php');
-
-        require_once "db_booking.php";
-
-
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (isset($_POST['btnbook'])) {
-                $checkbox = $_POST['pr'];
-                $chc_book = "";
-                foreach ($checkbox as $chk) {
-                    $chc_book .= $chk . ",";
-                }
-                if (mysqli_query($conn, "INSERT INTO seat_booking(seat) VALUES('" . $seat . "')")) {
-                    header("location: movies.php");
-                    die('<script type="text/javascript">alert("Booking Succesufully done");location.replace("movies.php")</script>');
-                    exit();
-                } else {
-                    die('<script type="text/javascript">alert("Please retry to book seat");');
-                }
-            }
-        }
-        ?>
+       
         <div class="content-booking">
             <div class="container  text-center">
                 <div class="booking-header">
@@ -99,8 +65,8 @@ if (isset($_SESSION['email'])) {
                         <h2 class="text-success"> SCREEN 1 </h2>
                         <div class="screen-a p-3 border  my-3">
                             <div class="seat-a">
-                                <label>A</label><input type="checkbox" id="a1" name="pr[]" value="1" onclick="checkPrice()" <?php if (in_array("1", $session_products)) echo "checked='checked'"; ?> alt="1607.00" /> >
-                                <input type="checkbox" id="myCheck" name="pr[]" value="2" onclick="checkPrice()" <?php if (in_array("2", $session_products)) echo "checked='checked'"; ?> alt="1607.00" /> >
+                                <label>A</label><input type="checkbox" id="a1" name="pr[]" value="1" onclick="checkPrice()">
+                                <input type="checkbox" id="a2" name="pr[]" value="2" onclick="checkPrice()">
                                 <input type="checkbox" id="a3" name="pr[]" value="3" onclick="checkPrice()">
                                 <input type="checkbox" id="a4" name="pr[]" value="4" onclick="checkPrice()">
                                 <input type="checkbox" id="a5" name="pr[]" value="5" onclick="checkPrice()">
@@ -161,8 +127,8 @@ if (isset($_SESSION['email'])) {
                                 <input type="checkbox" id="E10" name="pr[]" value="50" onclick="checkPrice()">
                                 <br>
                                 <input class="m-3 btn text-center btn-dark" type="submit" name="btnbook" value="BOOK">
-                                <button onclick="myFunction()">Try it</button>
-                                <input type="hidden" value="" </div>
+
+
                             </div>
                     </form>
                 </div>

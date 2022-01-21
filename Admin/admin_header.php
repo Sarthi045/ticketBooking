@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION)){
+if (!isset($_SESSION)) {
     session_start();
 }
 ?>
@@ -22,24 +22,25 @@ if(!isset($_SESSION)){
     <div class="header">
         <div class="navmenu container-fluid">
             <nav class="navbar d-flex justify-content-end ">
-                <ul class="navbar-nav">
-                    
+                
+                        <ul class="navbar-nav">
 
-                    <?php
-                    if (isset($_SESSION['admin'])) {
 
-                        echo '<li class="nav-item d-flex">
+                            <?php
+                            if (isset($_SESSION['admin'])) {
+
+                                echo '<li class="nav-item d-flex">
                         
                         <a class="nav-link tens" href="../Admin/admin_logout.php">Logout</a></li>';
-                    } else {
-                        echo '<li class="nav-item d-flex">
+                            } else {
+                                echo '<li class="nav-item d-flex">
                         
                         <a class="nav-link tens" href="../Admin/admin_login.php">Log in</a></li>';
-                    }
-                    ?>
+                            }
+                            ?>
 
 
-                </ul>
+                        </ul>
             </nav>
         </div>
     </div>

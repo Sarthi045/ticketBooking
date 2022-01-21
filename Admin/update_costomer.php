@@ -1,32 +1,28 @@
 <?php
+
 session_start();
 if (isset($_SESSION['admin'])) {
 ?>
-
     <?php
-    require_once "../db_booking.php";
-    if (isset($_POST['update'])) 
-    {       
-        $coust_id = $_POST['coust_id'];
-        $name = $_POST['name'];
-        $mobile = $_POST['mobile'];
-        $email = $_POST['email'];
-        $result = mysqli_query($conn, "UPDATE signup_booking SET name='$name',email='$email',mobile='$mobile' WHERE coust_id='$coust_id'");
-        header("Location: admin_coustomer.php");
+    require_once '../db_booking.php';
+     $coust_id = $_GET['coust_id'];
+     $result = mysqli_query($conn, "SELECT * FROM signup_booking WHERE coust_id=$coust_id");
+     while($res = mysqli_fetch_array($result))
+     {
+         $name = $res['name'];
+         $mobile = $res['mobile'];
+         $email = $res['email'];
+     }
+
+    ?>
+
+
+   
     }
     ?>
-    <?php
-        $coust_id = $_GET['coust_id'];
-        $result = mysqli_query($conn, "SELECT * FROM signup_booking WHERE coust_id='$coust_id'");
-        while ($user_data = mysqli_fetch_array($result))
-        {
-            $coust_id = $user_data['coust_id'];
-            $name = $user_data['name'];
-            $email = $user_data['email'];
-            $mobile = $user_data['mobile'];
-        }
-    
-    ?>
+
+
+
     <!DOCTYPE html>
     <html lang="en">
 
@@ -38,38 +34,40 @@ if (isset($_SESSION['admin'])) {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="../CSS/admin_header.css">
-        <title> Header </title>
+        <title> update_costomer </title>
     </head>
 
     <body>
-        <a href="admin_panel.php">Home</a>
-        <br/><br/>
 
-        <form name="update_user" method="post" action="update_costomer.php">
-            <table border="0">
-                <tr>
-                    <td>Name</td>
-                    <td><input type="text" name="name" value=<?php echo $name; ?>></td>
-                </tr>
-                <tr>
-                    <td>Email</td>
-                    <td><input type="text" name="email" value=<?php echo $email; ?>></td>
-                </tr>
-                <tr>
-                    <td>Mobile</td>
-                    <td><input type="text" name="mobile" value=<?php echo $mobile; ?>></td>
-                </tr>
-                <tr>
-                    <td><input type="hidden" name="id" value=<?php echo $_GET['coust_id']; ?>></td>
-                    <td><input type="submit" name="update" value="Update"></td>
-                </tr>
-            </table>
-        </form>
+        <br /><br />
+        <div class="container">
+            <div class="form ">
+                <h1> Update costomer </h1>
+                <form action="./update.php" method="post" class="input-group">
+                    <div class="mb-3">
+
+                       
+
+                        <label for="name" class="form-label my-2">Full Name : </label>
+                        <input type="text" class="form-control" name="name" placeholder=" Name" value="<?php echo $name;?>">
+
+                        <label for="mobile" class="form-label my-2">Mobile Number : </label>
+                        <input type="text" class="form-control" name="mobile" placeholder=" number" value="<?php echo $mobile;?>">
+
+                        <label for="email" class="form-label my-2">Email : </label>
+                        <input type="email" class="form-control" name="email" placeholder=" Email" value="<?php echo $email;?>" >
+
+                        <input type="hidden" name="coust_id" value=<?php echo $_GET['coust_id'];?>>
+                        <button type="submit" name="update" class="btn btn-dark my-3">Upade</button>
+                    </div>
+                </form>
+            </div>
+            </form>
+        </div>
     </body>
 
     </html>
 <?php
 } else {
     die('<script type="text/javascript">alert("First you need to Login to access");location.replace("admin_login.php")</script>');
-    
 }
