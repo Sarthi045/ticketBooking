@@ -22,14 +22,14 @@ require_once "../db_booking.php";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../CSS/admin_panel.css">
-    <title> Checkbox show</title>
+    <title> Booked Movie list</title>
 </head>
 
 <body>
 
     <div class="booked-seat">
         <div class="container">
-            <h2>Checkbox show </h2>
+            <h2>Booked Movie list </h2>
             <div class="row">
                 <div class="d-flex justify-content-center col-sm-12 p-3">
 

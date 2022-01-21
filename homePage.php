@@ -29,7 +29,7 @@ include('header.php');
                         <h3> MCre Show </h3>
                     </div>
                     <div class="row ">
-                        <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6 mt-4 py-5  text-white ">
+                        <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6 mt-4 py-4  text-white ">
                             <p>BOOK with us</p>
                             <div class="col-sm-12 col-lg-6 col-md-6 col-xl-6 text-white py-2 ">
                                 <a class="nav-link" href="./movies.php">Watch your favourite movie</a>

@@ -31,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($res1 == 1 || $res2 == 1)
         {   
             $_SESSION['email']=$_POST['email'];
-            header("location: movies.php");
-               
+           
+            die('<script type="text/javascript">alert("Login successfully done");location.replace("./homepage.php")</script>');   
         } else  {
 
             die('<script type="text/javascript">alert("Please enter correct email or password!");location.replace("login.php")</script>');
