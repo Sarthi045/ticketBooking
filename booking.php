@@ -1,16 +1,13 @@
 <?php
-if (!isset($_SESSION)) {
-    session_start();
-    include('header.php');
-
-    if (isset($_SESSION['email'])) {
-        require_once "db_booking.php";
-        
+if (isset($_SESSION['email'])) {
+    require_once "db_booking.php";
+    if (!isset($_SESSION)) {
+        session_start();
+        include('header.php');
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $checkBox = implode(',', $_POST['pr']);
             if (isset($_POST['btnbook'])) {
                 if (mysqli_query($conn, "INSERT INTO seat_booking(seat,coust_id) VALUES('" . $checkBox . "','" . $checkBox . "')")) {
-
                     die('<script type="text/javascript">alert("Booking done.");location.replace("movies.php")</script>');
                     exit();
                 } else {
@@ -50,7 +47,7 @@ if (!isset($_SESSION)) {
 
     <body>
 
-       
+
         <div class="content-booking">
             <div class="container  text-center">
                 <div class="booking-header">
