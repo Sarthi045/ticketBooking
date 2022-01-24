@@ -23,12 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Error !!";
         }
-
-
-
         $data = $_POST;
-
-
 
         if (mysqli_query($conn, "INSERT INTO movielist(movnm,moviedisc,uplodeimg) VALUES('" . $movnm . "','" . $moviedisc . "', '" . $filepath . "')")) {
 
@@ -67,16 +62,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h4> Every friday new movie
                 <a href="./admin_movie_list_show.php" class="btn text-center mx-3 btn-dark">movie list</a></h4>
             </div>
-            <div class="form form-control my-3 align-item-center">
+            <div class="form form-control my-3">
                 <form enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="input-group">
                     <div class="mb-3">
-
                         <label for="movnm" class="form-label my-2">Movie Name : </label>
                         <input type="text" class="form-control" name="movnm" placeholder="write movie" required>
-
                         <label for="movnm" class="form-label my-2">Movie Discription : </label>
                         <textarea class="form-control" name="moviedisc" placeholder="write discription"></textarea>
-
                         <label for="img" class="form-label my-2">Upload Movie Image : </label>
                         <input type="file" class="form-control file" name="uplodeimg" value="" required><br>
                         <button type="submit" name="btnmov" class="btn btn-dark my-3">POST MOVIE</button>
@@ -84,11 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </form>
             </div>
         </div>
-
     </div>
-
-
-
 </body>
-
 </html>

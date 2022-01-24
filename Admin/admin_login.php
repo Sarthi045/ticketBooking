@@ -18,17 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['btnsub'])) {
        
         $admin = mysqli_real_escape_string($conn, $_POST['admin']);
-        $adpsw = mysqli_real_escape_string($conn, $_POST['adpsw']);
-       
+        $adpsw = mysqli_real_escape_string($conn, $_POST['adpsw']);       
         $data = $_POST;     
 
-        if (         
+        if(         
             empty($data['admin']) ||
-            empty($data['adpsw'])
-           
-        ) {
+            empty($data['adpsw'])    
+        ){
             die('<script type="text/javascript">alert("Please fill all required fields!");location.replace("admin_login.php")</script>');
-            
         }
        
         $result_admin = mysqli_query($conn, "select * from admin where admin = '" . $admin . "' ") or die('DATABASE ERROR...');
