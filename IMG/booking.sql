@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2022 at 12:56 PM
+-- Generation Time: Jan 24, 2022 at 08:08 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.3.29
 
@@ -89,12 +89,11 @@ CREATE TABLE `seat_booking` (
 --
 
 INSERT INTO `seat_booking` (`seat`, `coust_id`) VALUES
-('1,2', 1),
-('2', 2),
-('1,2', 1),
-('1', 1),
-('1,2', 1),
-('3', 3);
+('1,2,3,4,5,6,7,8,9,10,11,12', 1),
+('1,22', 1),
+('2,23', 2),
+('1,41,42,43', 1),
+('1,2,13,14', 1);
 
 -- --------------------------------------------------------
 

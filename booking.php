@@ -1,21 +1,21 @@
 <?php
+
+
+include('header.php');
 if (isset($_SESSION['email'])) {
     require_once "db_booking.php";
-    if (!isset($_SESSION)) {
-        session_start();
-        include('header.php');
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $checkBox = implode(',', $_POST['pr']);
-            if (isset($_POST['btnbook'])) {
-                if (mysqli_query($conn, "INSERT INTO seat_booking(seat,coust_id) VALUES('" . $checkBox . "','" . $checkBox . "')")) {
-                    die('<script type="text/javascript">alert("Booking done.");location.replace("movies.php")</script>');
-                    exit();
-                } else {
-                    die('<script type="text/javascript">alert("Unable to booking, please retry");location.replace("booking.php")</script>');
-                }
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $checkBox = implode(',', $_POST['pr']);
+        if (isset($_POST['btnbook'])) {
+            if (mysqli_query($conn, "INSERT INTO seat_booking(seat,coust_id) VALUES('" . $checkBox . "','" . $checkBox . "')")) {
+                die('<script type="text/javascript">alert("Booking done.");location.replace("movies.php")</script>');
+                exit();
+            } else {
+                die('<script type="text/javascript">alert("Unable to booking, please retry");location.replace("booking.php")</script>');
             }
         }
     }
+
 ?>
 
     <!DOCTYPE html>
@@ -36,7 +36,6 @@ if (isset($_SESSION['email'])) {
                 var total = 0;
                 for (var i = 0; i < input.length; i++) {
                     if (input[i].checked) {
-
                         total += parseFloat(input[i].value);
                     }
                 }
@@ -46,10 +45,8 @@ if (isset($_SESSION['email'])) {
     </head>
 
     <body>
-
-
         <div class="content-booking">
-            <div class="container  text-center">
+            <div class="container text-center">
                 <div class="booking-header">
                     <h1> Booking Page </h1>
                 </div>
@@ -70,8 +67,9 @@ if (isset($_SESSION['email'])) {
                                 <input type="checkbox" id="a9" name="pr[]" value="9" onclick="checkPrice()">
                                 <input type="checkbox" id="a10" name="pr[]" value="10" onclick="checkPrice()">
                             </div>
+
                             <div class="seat-b ">
-                                <label>B</label><input type="checkbox" id="b1" name="pr[]" value="11" onclick="checkPrice()">
+                                <label>B</label><input type="checkbox" id="b1" name="pr[]" value="11" onclick="checkPrice()" >
                                 <input type="checkbox" id="b2" name="pr[]" value="12" onclick="checkPrice()">
                                 <input type="checkbox" id="b3" name="pr[]" value="13" onclick="checkPrice()">
                                 <input type="checkbox" id="b4" name="pr[]" value="14" onclick="checkPrice()">
@@ -81,8 +79,8 @@ if (isset($_SESSION['email'])) {
                                 <input type="checkbox" id="b8" name="pr[]" value="18" onclick="checkPrice()">
                                 <input type="checkbox" id="b9" name="pr[]" value="19" onclick="checkPrice()">
                                 <input type="checkbox" id="b10" name="pr[]" value="20" onclick="checkPrice()">
-
                             </div>
+
                             <div class="seat-c ">
                                 <label>C</label><input type="checkbox" id="c1" name="pr[]" value="21" onclick="checkPrice()">
                                 <input type="checkbox" id="c2" name="pr[]" value="22" onclick="checkPrice()">

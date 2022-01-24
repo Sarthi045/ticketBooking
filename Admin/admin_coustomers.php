@@ -41,6 +41,8 @@ require_once "../db_booking.php";
                             <th>Name</th>
                             <th>Mobile</th>
                             <th>Email</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <?php
@@ -53,7 +55,9 @@ require_once "../db_booking.php";
                             <td><?php echo $data['coust_id']; ?></td>
                              <td><?php echo $data['name']; ?></td>
                                 <td><?php echo $data['mobile']; ?></td>
-                                <td><?php echo $data['email']; ?></td>                                
+                                <td><?php echo $data['email']; ?></td>
+                                <td><?php echo '<a class="btn btn-dark" href="update_costomer.php">Edit</a>' ?></td>                               
+                                <td><?php echo '<a class="btn btn-dark" href="..delete_coustmer">Delete</a>' ?></td>    
                             </tr>
                             <?php
                         }
